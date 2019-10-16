@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title> Twitoff!!!! {{ title }} </title>
+  </head>
+​
+  <body>
+    <h1> Twitoff app </h1>
+  <!-- we're putting in a block here! -->
+    {% block content %}
+    <form action="/user" methods="post">
+      <input type="text" name="user_name" placeholder="User to add">
+      <input type="submit" value="Add User">
+    </form>
+    {% endblock %}
+  </body>
+</html>
+
+<!-- Add a form to let the client select two Twitter Users and enter Tweet text to
+predict which user is more likely to tweet the given text
+Add a form to let the client request new Twitter Users be added, and add their
+Tweets/make them available for predictive modeling as well --> 
+
+
