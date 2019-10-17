@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title> Twitoff!!!! {{ title }} </title>
+    <title> Twitoff!!!! Home {{ title }} </title>
   </head>
-​
+
   <body>
-    <h1> Twitoff app </h1>
-  <!-- we're putting in a block here! -->
+    <h2> Twitoff app </h2>
     {% block content %}
-    <form action="/user" methods="post">
+    <form action="/user" method="post">
       <input type="text" name="user_name" placeholder="User to add">
       <input type="submit" value="Add User">
     </form>
+    <form action="/user" method="post">
+      <input type="text" name="user_name" placeholder="User to add">
+      <input type="submit" value="Add User">
+    </form>
+    <form action="/user" method="post">
+      <input type="text" name="user_name" placeholder="Tweet text to predict">
+      <input type="submit">
+    </form>
+    <button type="button", color='blue'>Compare Users</button> 
     {% endblock %}
   </body>
 </html>
 
 <!-- Add a form to let the client select two Twitter Users and enter Tweet text to
 predict which user is more likely to tweet the given text
-Add a form to let the client request new Twitter Users be added, and add their
+<!Add a form to let the client request new Twitter Users be added, and add their
 Tweets/make them available for predictive modeling as well --> 
-
-

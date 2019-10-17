@@ -1,3 +1,4 @@
+#Here's also an updated app.py for your reference with just the POST method in the first line
 """Main application for twitoff"""
 #imports
 from decouple import config
@@ -15,9 +16,11 @@ def create_app():
     def root():
         users = User.query.all()
         return render_template('base.html', title='Home', users=users)
-    @app.route('/user', methods=['POST','GET'])
+    @app.route('/user', methods=['POST'])
     @app.route('/user/<name>', methods=['GET'])
     def user(name=None,message=''):
+        name = name or request.values['user_name']
+        # import pdb; pdb.set_trace()
         try:
             if request.method == 'POST':
                 add_or_update_user(name)
@@ -33,8 +36,4 @@ def create_app():
         DB.drop_all()
         DB.create_all()
         return render_template('base.html', title='DB Reset', users=[])
-    return app
-#Collapse
-
-
-
+    return app 
